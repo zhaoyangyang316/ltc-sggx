@@ -3,6 +3,7 @@
 #include <iostream>
 #include <sstream>
 #include <cmath>
+#include <vec3.h>
 
 // Numerical constants
 constexpr double Pi       = 3.14159265358979323846;

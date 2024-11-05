@@ -8,6 +8,7 @@
 #include <bsdfs/diffuse.h>
 #include <bsdfs/ltc.h>
 #include <bsdfs/sheen_approx.h>
+#include <bsdfs/single_scatter_sggx.h>
 #include <bsdfs/sheen_volume.h>
 
 // Python bindings for all relevant functionality.
@@ -145,6 +146,11 @@ PYBIND11_MODULE(ltcsheen, m) {
         .def(py::init<double>(),
              "alpha"_a)
         .def_readwrite("alpha", &ApproxSheenBrdf::alpha);
+
+    py::class_<SingleLayerSGGXBrdf, Brdf>(m, "SingleLayerSGGXBrdf")
+        .def(py::init<double>(),
+             "alpha"_a)
+        .def_readwrite("alpha", &SingleLayerSGGXBrdf::alpha);
 
     py::class_<VolumeSheenBrdf, Brdf>(m, "VolumeSheenBrdf")
         .def(py::init<int, double, double, double, double>(),

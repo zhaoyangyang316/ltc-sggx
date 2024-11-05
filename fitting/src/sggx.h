@@ -30,6 +30,23 @@ struct Ellipsoid {
         S.yz = sigma*sigma*y*z - y*z;
         return S;
     }
+
+    static Ellipsoid from_NonFiber(const vec3 &t, double sigma) {
+        double x = t.x();
+        double y = t.y();
+        double z = t.z();
+        Ellipsoid S;
+        double sigma2 = sigma * sigma;
+    
+        S.xx = x * x + sigma2 * (y * y + z * z);
+        S.xy = x * y - sigma2 * x * y;
+        S.xz = x * z - sigma2 * x * z;
+        S.yy = y * y + sigma2 * (x * x + z * z);
+        S.yz = y * z - sigma2 * y * z;
+        S.zz = z * z + sigma2 * (x * x + y * y);
+        return S;
+    }
+
 };
 
 inline double ndf(const vec3 &wm, const Ellipsoid &S) {
