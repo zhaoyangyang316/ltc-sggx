@@ -1,3 +1,8 @@
+# Forked from [Link](https://github.com/tizian/ltc-sheen) 
+
+Simply add non-fiber sggx support
+
+
 <img src="https://github.com/tizian/ltc-sheen/raw/master/images/teaser.jpg" alt="Teaser">
 
 # Practical Multiple-Scattering Sheen Using Linearly Transformed Cosines
