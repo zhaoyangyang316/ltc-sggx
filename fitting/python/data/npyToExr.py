@@ -4,6 +4,7 @@ import Imath
 
 def save_npy_as_exr(npy_file, exr_file):
     data = np.load(npy_file)
+    data = data.astype(np.float32)
     height, width = data.shape[:2]
     header = OpenEXR.Header(width, height)
 
@@ -21,6 +22,6 @@ def save_npy_as_exr(npy_file, exr_file):
     exr.writePixels(data_dict)
     exr.close()
 
-###save_npy_as_exr('ltc_table_single_sggx.npy', 'ltc_table_single_sggx.exr')
-save_npy_as_exr('ltc_table_sheen_approx.npy', 'ltc_table_single_sggx.exr')
+save_npy_as_exr('ltc_table_single_sggx.npy', 'ltc_table_single_sggx.exr')
+####save_npy_as_exr('ltc_table_sheen_approx.npy', 'ltc_table_single_sggx.exr')
 

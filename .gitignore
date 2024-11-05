@@ -1,3 +1,4 @@
 .DS_Store
 /.vscode
 /fitting/build/*
+fitting/.DS_Store
